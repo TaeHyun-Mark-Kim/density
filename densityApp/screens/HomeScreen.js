@@ -68,21 +68,9 @@ export default class HomeScreen extends React.Component {
   mapBuildings(){
     const building_data = this.state.dataSource;
     const building_cards = [];
-    var dict = {
-      125: "Opens at 9AM",
-      126: "Opens at 9AM",
-      127: "Opens at 9AM",
-      116: "Opens 24 hrs",
-      117: "Opens 24 hrs",
-      118: "Opens 24 hrs",
-      119: "Opens 24 hrs",
-      120: "Opens at 9AM",
-      121: "Opens at 9AM",
-      122: "Opens at 9AM"
-    }
     for (let i = 0; i < building_data.length; i++){
       building_cards.push(<HomeCard building={building_data[i].group_name}
-      closeTime={building_data[i].client_count} percentFull={building_data[i].percent_full}></HomeCard>)
+      closeTime={building_data[i].open_close_time} percentFull={building_data[i].percent_full}></HomeCard>)
     }
     return building_cards;
   }
